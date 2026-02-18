@@ -1,4 +1,4 @@
-function UserCard({ user }) {
+function UserCard({ user, onViewUsers }) {
   return (
     <div style={{
       border: '1px solid #ddd',
@@ -16,39 +16,41 @@ function UserCard({ user }) {
       e.currentTarget.style.transform = 'translateY(0)';
       e.currentTarget.style.boxShadow = 'none';
     }}
+
+    onClick={() => onViewUsers(user.id)}
     >
       
       <h3 style={{
-        fontSize: '14px',
+        fontSize: '17px',
         margin: '0 0 10px 0',
-        height: '40px',
+        height: '30px',
         overflow: 'hidden'
       }}>
-        {user.id}
+        User Id: {user.id}
       </h3>
       <h3 style={{
-        fontSize: '14px',
+        fontSize: '17px',
         margin: '0 0 10px 0',
-        height: '40px',
+        height: '30px',
         overflow: 'hidden'
       }}>
-        {user.username}
+        UserName: {user.username}
       </h3>
       <h3 style={{
-        fontSize: '14px',
+        fontSize: '17px',
         margin: '0 0 10px 0',
-        height: '40px',
+        height: '50px',
         overflow: 'hidden'
       }}>
-        {user.email}
+        Email: {user.email}
       </h3>
       <h3 style={{
-        fontSize: '14px',
+        fontSize: '17px',
         margin: '0 0 10px 0',
-        height: '40px',
+        height: '30px',
         overflow: 'hidden'
       }}>
-        {user.password}
+        Password: {user.password}
       </h3>
       
     </div>
