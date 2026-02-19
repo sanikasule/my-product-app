@@ -1,4 +1,16 @@
-function ProductCard({ product, onViewDetails }) {
+import { FaHeart } from "react-icons/fa6";
+
+function ProductCard({ product, onViewDetails, onAddToWishList, onRemove, wishList }) {
+    const existing = wishList.some((item) => item.id === product.id)
+
+    const toggleHeart = (e, product) => {
+      e.stopPropagation();
+      if (!existing) {
+        onAddToWishList(product)
+      } else {
+        onRemove(product)
+      }
+    }
   return (
     <div style={{
       border: '1px solid #ddd',
@@ -48,7 +60,8 @@ onClick={() => onViewDetails(product.id)}
         </span>
       </div>
       
-      <p style={{
+      <div  style={{display: 'flex', flexDirection: 'row', gap: '100px'}}>
+        <p style={{
         fontSize: '20px',
         fontWeight: 'bold',
         color: '#0066cc',
@@ -56,6 +69,15 @@ onClick={() => onViewDetails(product.id)}
       }}>
         ${product.price}
       </p>
+
+      <p style={{
+        fontSize: '20px',
+        fontWeight: 'bold',
+        color: '#0066cc',
+        margin: 0}}>
+          <FaHeart onClick={(e) => toggleHeart(e, product)} style={{color: existing ? 'red' : '#d3d3d3'}}/>
+      </p>
+      </div>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function ProductDetail({ productId, onBack, onAddToCart }) {
+function ProductDetail({ productId, onBack, onAddToCart, onAddToWishList }) {
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -173,6 +173,28 @@ function ProductDetail({ productId, onBack, onAddToCart }) {
                         onMouseOut={(e) => e.target.style.background = '#0066cc'}
                     >
                         🛒 Add to Cart
+                    </button>
+
+                    {/* Add to WishList Button */}
+                    <button
+                        onClick={() => onAddToWishList(product)}
+                        style={{
+                            marginTop: '15px',
+                            width: '100%',
+                            padding: '15px',
+                            fontSize: '18px',
+                            fontWeight: 'bold',
+                            background: '#0066cc',
+                            color: 'white',
+                            border: 'none',
+                            borderRadius: '4px',
+                            cursor: 'pointer',
+                            transition: 'background 0.3s'
+                        }}
+                        onMouseOver={(e) => e.target.style.background = '#0052a3'}
+                        onMouseOut={(e) => e.target.style.background = '#0066cc'}
+                    >
+                        🛒 Add to WishList
                     </button>
                 </div>
             </div>
