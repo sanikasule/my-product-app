@@ -25,15 +25,15 @@ function UserCard({ user, onViewUsers }) {
         borderRadius: '50px',
         padding: '15px',
         background: '#0066cc',
-        height: '25px',
-        width: '30px',
+        height: '30px',
+        width: '40px',
         textAlign: 'center',
-        fontSize: '20px',
+        fontSize: '22px',
         color: 'white',
         fontWeight: 'bolder',
         marginBottom: '15px'
       }}>
-        {user.username[0].toUpperCase()}
+        {user.name.firstname[0].toUpperCase()}{user.name.lastname[0].toUpperCase()}
       </div>
       
       <h3 style={{
@@ -55,7 +55,7 @@ function UserCard({ user, onViewUsers }) {
       <h3 style={{
         fontSize: '17px',
         margin: '0 0 10px 0',
-        height: '40px',
+        height: '45px',
         overflow: 'hidden'
       }}>
         Email: {user.email}
@@ -66,7 +66,7 @@ function UserCard({ user, onViewUsers }) {
         height: '30px',
         overflow: 'hidden'
       }}>
-        Password: {user.password}
+        Name: {user.name.firstname} {user.name.lastname}
       </h3>
       
     </div>
