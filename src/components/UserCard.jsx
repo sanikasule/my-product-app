@@ -25,7 +25,7 @@ function UserCard({ user, onViewUsers }) {
         borderRadius: '50px',
         padding: '15px',
         background: '#0066cc',
-        height: '30px',
+        height: '27px',
         width: '40px',
         textAlign: 'center',
         fontSize: '22px',
