@@ -19,6 +19,22 @@ function UserCard({ user, onViewUsers }) {
 
     onClick={() => onViewUsers(user.id)}
     >
+      <div
+        style={{
+        border: '1px solid #ddd',
+        borderRadius: '50px',
+        padding: '15px',
+        background: '#0066cc',
+        height: '25px',
+        width: '30px',
+        textAlign: 'center',
+        fontSize: '20px',
+        color: 'white',
+        fontWeight: 'bolder',
+        marginBottom: '15px'
+      }}>
+        {user.username[0].toUpperCase()}
+      </div>
       
       <h3 style={{
         fontSize: '17px',
@@ -39,7 +55,7 @@ function UserCard({ user, onViewUsers }) {
       <h3 style={{
         fontSize: '17px',
         margin: '0 0 10px 0',
-        height: '50px',
+        height: '40px',
         overflow: 'hidden'
       }}>
         Email: {user.email}
